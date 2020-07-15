@@ -12,6 +12,11 @@ module.exports ={
     overlay: {
       warnings: true,
       errors: true
+    },
+
+    // todo 3
+    proxy: {
+      '/api': 'http://localhost:3000'
     }
   },
   performance: { hints: false },

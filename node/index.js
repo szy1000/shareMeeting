@@ -5,7 +5,8 @@ let app = express()
 
 app.get('/api/getUser', function (req, res) {
   // res.setHeader('Access-Control-Allow-Methods', 'PUT')
-  res.setHeader('Access-Control-Allow-Origin', '*')
+  // todo 2
+  // res.setHeader('Access-Control-Allow-Origin', '*')
   let {wd, callback} = req.query;
   console.log(req)
   console.log(callback)
