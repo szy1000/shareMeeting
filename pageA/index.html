@@ -8,37 +8,21 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>pageA</h1>
-  <button id="ajax">ajax</button>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <h1>pageA iframe</h1>
+  <button id="btn">send</button>
+  <iframe id="ifr" src="http://localhost:8888/" frameborder="0"></iframe>
   <script>
-    $('#ajax').click(function () {
-      $.ajax({
-        url: 'http://localhost:3000/api/getUser',
-        method: 'get',
-        success: function (res) {
-          console.log(res)
-        }
+    const ifr = document.getElementById('ifr').contentWindow;
+    const btn = document.getElementById('btn')
 
-      })
-    })
-  </script>
-  <hr>
-
-  <h2>jsonp</h2>
-
-  <button id="btn">jsonp</button>
-  <script>
-    $('#btn').click(function () {
-      const script = document.createElement('script');
-      script.src = `http://localhost:3000/api/userInfo/?callback=show`
-      document.body.appendChild(script)
-    })
-    function show(data) {
-      alert(data)
+    // todo 4
+    btn.onclick = function() {
+      ifr.postMessage({
+        name: 'shenzhiyong',
+        age: 18,
+        avatar: 'https://pic3.zhimg.com/v2-08d2d2262a25abcc98a44af38b0aac26_xs.jpg'
+      }, 'http://localhost:8888/')
     }
   </script>
-  <hr>
-
 </body>
 </html>

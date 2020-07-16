@@ -15,9 +15,9 @@ module.exports ={
     },
 
     // todo 3
-    proxy: {
-      '/api': 'http://localhost:3000'
-    }
+    // proxy: {
+    //   '/api': 'http://localhost:3000'
+    // }
   },
   performance: { hints: false },
   output: {
@@ -33,6 +33,10 @@ module.exports ={
   },
   module: {
     rules: [
+      {
+        test: /\.(css|less)$/,
+        use: ['style-loader','css-loader','less-loader']
+      },
       {
         test: /\.(jsx|js)$/,
         loader: 'babel-loader',

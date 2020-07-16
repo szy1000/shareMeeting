@@ -1,11 +1,8 @@
 let express = require('express');
-
 let app = express()
-
 app.get('/api/getUserInfo', function (req, res) {
   // todo 1
   // res.setHeader('Access-Control-Allow-Origin', '*')
-
   // todo 2
   let {wd, callback} = req.query;
   const userInfo = {
@@ -19,6 +16,5 @@ app.get('/api/getUserInfo', function (req, res) {
     res.end(JSON.stringify(userInfo))
   }
 })
-
 
 app.listen(3000)
