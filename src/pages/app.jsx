@@ -5,7 +5,7 @@ export default class App extends React.Component {
 
   ajax() {
     let xhr = new XMLHttpRequest();
-    xhr.open('get', '/api/getUser', true);
+    xhr.open('get', '/api/getUserInfo', true);
     xhr.send();
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
@@ -13,6 +13,10 @@ export default class App extends React.Component {
         let response = JSON.parse(xhr.responseText);
       }
     }
+  }
+
+  show = (e) => {
+    console.log(e)
   }
 
   componentDidMount() {

@@ -2,29 +2,22 @@ let express = require('express');
 
 let app = express()
 
-
-app.get('/api/getUser', function (req, res) {
-  // res.setHeader('Access-Control-Allow-Methods', 'PUT')
-  // todo 2
+app.get('/api/getUserInfo', function (req, res) {
+  // todo 1
   // res.setHeader('Access-Control-Allow-Origin', '*')
+
+  // todo 2
   let {wd, callback} = req.query;
-  console.log(req)
-  console.log(callback)
-  console.log(wd)
-  let obj = {
-    name: wd,
+  const userInfo = {
+    name: 'shenzhiyong',
     age: 18,
+    avatar: 'https://pic3.zhimg.com/v2-08d2d2262a25abcc98a44af38b0aac26_xs.jpg'
   }
-  res.end(JSON.stringify(obj))
-})
-
-
-app.get('/api/userInfo', function (req, res) {
-  let {wd, callback} = req.query;
-  console.log(req)
-  console.log(callback)
-  console.log(wd)
-  res.end(`${callback}('wwwww')`)
+  if(callback) {
+    res.end(`${callback}(${JSON.stringify(userInfo)})`)
+  } else {
+    res.end(JSON.stringify(userInfo))
+  }
 })
 
 
