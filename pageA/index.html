@@ -8,9 +8,12 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>pageA iframe</h1>
+  <h1>pageA iframe  postMessage</h1>
   <button id="btn">send</button>
-  <iframe id="ifr" src="http://localhost:8888/" frameborder="0"></iframe>
+  <h4>下面是http://localhost:8888/页面</h4>
+  <div>
+    <iframe id="ifr" width="100%" height="300" src="http://localhost:8888/" frameborder="0"></iframe>
+  </div>
   <script>
     const ifr = document.getElementById('ifr').contentWindow;
     const btn = document.getElementById('btn')

@@ -8,13 +8,14 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>pageB</h1>
+  <h1>value 存储页面</h1>
   <script>
-    window.name = JSON.stringify({
-      name: 'shenzhiyong',
-      age: 18,
-      avatar: 'https://pic3.zhimg.com/v2-08d2d2262a25abcc98a44af38b0aac26_xs.jpg'
-    })
+    console.log('=================cccccccc')
+    console.log(location.hash);
+    let iframe = document.createElement('iframe');
+    iframe.src = 'http://localhost:5000/hashB.html#idontloveyou';
+    document.body.appendChild(iframe);
+    console.log('=================cccccccc')
   </script>
 </body>
 </html>
